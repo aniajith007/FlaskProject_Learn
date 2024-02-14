@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <script src="{{ url_for('static', filename='js/jj.js') }}"></script>
+</head>
+<body>
+    <h1 id="retured_data">{{name}}</h1>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: 'GET',
+                url: '/get_data',
+                success: function(data) {
+                    $('#retured_data').text(data);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
